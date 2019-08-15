@@ -34,7 +34,9 @@ class User extends CI_Controller
             $this->load->view('templates/footer');
         }
         else {
-            echo "Ok";
+            $this->User_model->store();
+            $this->session->set_flashdata('status', 'Created!');
+            redirect('user');
         }
         
         
